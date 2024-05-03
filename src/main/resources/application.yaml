@@ -1,4 +1,8 @@
 spring:
+  security:
+    user:
+      name: aakarshit
+      password: test
   application:
     name: microservices-config-server
   cloud:
@@ -7,5 +11,16 @@ spring:
         git:
           uri: https://github.com/Aakarshit/microservices-config-properties.git
           clone-on-start: true
+          search-paths: '{application}'
+          default-label: main
+
 server:
   port: 8888
+logging:
+  level:
+    org.springframework.cloud.config.server: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
